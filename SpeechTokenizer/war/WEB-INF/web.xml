@@ -18,7 +18,7 @@
   
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>SpeechTokenizer.html</welcome-file>
+   <welcome-file>SpeechTokenizer.html</welcome-file>
   </welcome-file-list>
 
 </web-app>

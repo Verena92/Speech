@@ -1,101 +1,31 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Speech Tokenizer</title>
 
+<head>
+<script language="javascript" type="text/javascript" src="Webspeech.js"></script>
+
+	<title>Speech Tokenizer</title>
+	
+</head>
+<body>
 <h1 class="center" id="headline">Speech Tokenizer</h1>
 <div class="center">
 	Um eine Aufnahme zu tätigen, bitte den Button "Speak" betätigen - die Aufnahme endet automatisch oder durch erneutes Klicken des "Speak" Buttons.
 </div>
 <br>
-<!--   <div class="center">
+<div class="center">
 	<button id="start_button" onclick="startButton(event)">Speak</button>
-</div>-->
+</div>
 <div id="results">
   <span id="final_span" class="final"></span>
   <span id="interim_span" class="interim"></span>
 </div>
+</body>
 
-<script type="text/javascript">
-	var final_transcript = '';
-	var recognizing = false;
-	var ignore_onend;
-	var start_timestamp;
 
-	if (!('webkitSpeechRecognition' in window)) {
-			upgrade ();
-		} else {
-			/*Erlaubt der Seite Zugriff auf das Mikrofon - webkitSpeechRecognition Objekt stellt das Speech Interface bereit und definiert Eventhandler*/
- 			var recognition = new webkitSpeechRecognition();
-  			/* Continous: true = User kann Pause einlegen, bei false wird sofort geschickt sobald pause*/
-  			recognition.continuous = true;
-  	        /* interimResults: true = angezeigte graue Wörter sind noch nicht festgestetzt, erst wenn sie schwarz sind, sind sie fest. 
-  	        false: Wörter kommen erst wenn sich das System sicher ist*/
-  			recognition.interimResults = true;
-  			/*Fired when the speech recognition service has begun listening to incoming audio with intent to recognize grammars associated with the current SpeechRecognition.*/
-  			
-  			recognition.onspeechstart = function() {
-    			/*Returns and sets the language of the current SpeechRecognition.*/
-    			recognition.lang = "en-US";
-    			recognizing = true;
-  			};
-  			/*Fired when the speech recognition service has disconnected.*/
-  			recognition.onspeechend = function() {
-    		recognizing = false;
-    		if (ignore_onend) {
-      			return;
-    			}
-  			};
-  			/*interim_transcript und wird jedes mal neu befüllt, da nur vorübergehend. der schwwarze Text (final_transcript) ändert sich nicht, deswegen kann er nur neue Audios aufnehmen*/
-  			/*Fired when the speech recognition service returns a result — a word or phrase has been positively recognized and this has been communicated back to the app.*/
-  			recognition.onresult = function(event) {
-   				var interim_transcript = '';
-    			for (var i = event.resultIndex; i < event.results.length; ++i) {
-      				if (event.results[i].isFinal) {
-        				final_transcript += event.results[i][0].transcript;
-      				} else {
-        				interim_transcript += event.results[i][0].transcript;
-      					}
-    				}
-    			/*linebreak für neuen Paragraphen, wird dann in HTML übersetzt*/
-    			final_transcript = capitalize(final_transcript);
-    			/*final_span für schwarzen Text*/
-    			final_span.innerHTML = linebreak(final_transcript);
-    			/*interim_span für grauen Text*/
-    			interim_span.innerHTML = linebreak(interim_transcript);
-  			};
-		}
-		
-/*Wird nach Drücken auf den Start-Button aufgerufen
-function startButton(event) {
-	if (recognizing) {
-    	recognition.onspeechstop();
-    	return;
-  	}
-	final_transcript = '';
-	/*aktiviert den Speech Recognizer und ruft onstart Eventhandler auf*/
-	recognition.onspeechstart();
-	ignore_onend = false;
-	final_span.innerHTML = '';
-	interim_span.innerHTML = '';
-	}*/
-	
-/* Durch linebreak und capatilize wird Text in Box eingeblendet */
-var two_line = /\n\n/g;
-var one_line = /\n/g;
-function linebreak(s) {
-	return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
-	}
-var first_char = /\S/;
-function capitalize(s) {
-	return s.replace(first_char, function(m) { return m.toUpperCase(); });
-	}
-	
-</script>
-
-<!--  CSS Styles
-
-<style>
-  * {
+<!--  CSS Styles -->
+<style> 
+ * {
     font-family: Verdana, Arial, sans-serif;
   }
   .center {
@@ -112,6 +42,7 @@ function capitalize(s) {
   .right {
     float: right;
   }
+  /**bis hier .**/
   #headline {
     font-size: 40px;
     font-weight: 300;
@@ -129,4 +60,4 @@ function capitalize(s) {
     background-color:transparent;
     padding: 2;
   }
-</style>-->
+</style> 

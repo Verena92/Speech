@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+    <!-- /*
+* SPEECH TOKENIZER
+* HANGOUTS PLUGIN
+ */ -->
+  <ModulePrefs title="Speech Tokenizer">
+    <Require feature="rpc"/>
+  </ModulePrefs>
+  <Content type="html"><![CDATA[
+<!DOCTYPE html>
+<!-- Hangout API JavaScript -->
+<script src="//hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.0"></script>
+
+<!-- Javascript Application -->
+<script src="//speech-tokenizer-1282.appspot.com/app.js"></script>
+
+<h1>Speech Tokenizer</h1>
+<div style="float: left; padding: 0px 20px; border-right: 1px solid #EEE">
+  <dl>
+	<dt>Mic aktiv:</dt>
+	<dt id="micstatus"></dt>
+	<dt>Hangouts-ID:</dt>
+	<dt id="hangoutsid"></dt>
+	<dt><button onClick="hangoutsid()">Click</button></dt>
+  </dl>
+</div>
+<div></div>
+<div style="clear: both;"></div>
+
+]]></Content>
+</Module>

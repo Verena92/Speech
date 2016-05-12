@@ -1,6 +1,59 @@
-<!DOCTYPE html>
+
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the     -->
+<!-- browser's rendering engine into                -->
+<!-- "Standards Mode". Replacing this declaration   -->
+<!-- with a "Quirks Mode" doctype is not supported. -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <link type="text/css" rel="stylesheet" href="SpeechTokenizer.css">
+
+    <title>Speech Tokenizer</title>
+    
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <script type="text/javascript" language="javascript" src="speechtokenizer/speechtokenizer.nocache.js"></script>
+  </head>
+
+  <!--                                           -->
+  <!-- The body can have arbitrary html, or      -->
+  <!-- you can leave the body empty if you want  -->
+  <!-- to create a completely dynamic UI.        -->
+  <!--                                           -->
+  <body>
+
+    <!-- history support -->
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    
+    <!-- gapi for Hangouts Button -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <h1>Speech Tokenizer Plugin</h1>
+
+    <div>Start Google+ Hangouts Client with the Application</div>
+    <div class="g-hangout" data-render="createhangout" data-initial_apps="[{ app_id : 'speech-tokenizer-1282', start_data : 'dQw4w9WgXcQ', 'app_type' : 'ROOM_APP' }]"></div>
+  	<div>Developer-Link: <a href="http://g.co/hangout">Click</a></div>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
 <meta charset="utf-8">
-<script type="text/javascript" src="Webspeech.js"></script>
+<script type="text/javascript" src="/SpeechTokenizer/src/Webspeech.js"></script>
 
 <head>
 	<title>Speech Tokenizer</title>
@@ -20,9 +73,12 @@
   <span id="interim_span" class="interim"></span>
 </div>
 </body>
+-->
 
 
-<!--  CSS Styles -->
+
+
+<!-- CSS Styles 
 <style> 
  * {
     font-family: Verdana, Arial, sans-serif;
@@ -59,4 +115,4 @@
     background-color:transparent;
     padding: 2;
   }
-</style> 
+</style>-->

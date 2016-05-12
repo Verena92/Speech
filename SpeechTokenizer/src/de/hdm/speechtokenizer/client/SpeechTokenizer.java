@@ -1,6 +1,7 @@
 package de.hdm.speechtokenizer.client;
 
 import de.hdm.speechtokenizer.shared.FieldVerifier;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -13,6 +14,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -39,7 +41,9 @@ public class SpeechTokenizer implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-		final Button sendButton = new Button("Send");
+		RootLayoutPanel rlp = RootLayoutPanel.get();
+		
+		/**final Button sendButton = new Button("Send");
 		final TextBox nameField = new TextBox();
 		nameField.setText("GWT User");
 		final Label errorLabel = new Label();
@@ -91,14 +95,14 @@ public class SpeechTokenizer implements EntryPoint {
 		class MyHandler implements ClickHandler, KeyUpHandler {
 			/**
 			 * Fired when the user clicks on the sendButton.
-			 */
+			 
 			public void onClick(ClickEvent event) {
 				sendNameToServer();
 			}
 
 			/**
 			 * Fired when the user types in the nameField.
-			 */
+			 
 			public void onKeyUp(KeyUpEvent event) {
 				if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
 					sendNameToServer();
@@ -107,7 +111,7 @@ public class SpeechTokenizer implements EntryPoint {
 
 			/**
 			 * Send the name from the nameField to the server and wait for a response.
-			 */
+			 
 			private void sendNameToServer() {
 				// First, we validate the input.
 				errorLabel.setText("");
@@ -153,5 +157,6 @@ public class SpeechTokenizer implements EntryPoint {
 		MyHandler handler = new MyHandler();
 		sendButton.addClickHandler(handler);
 		nameField.addKeyUpHandler(handler);
-	}
+	}*/
+}
 }
